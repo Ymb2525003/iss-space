@@ -1,0 +1,75 @@
+{
+  "users": [
+    { "id": "user-yaseen", "name": "Yaseen", "role": "admin" },
+    { "id": "user-azza", "name": "Azza", "role": "leader" },
+    { "id": "user-ahmed", "name": "Ahmed", "role": "leader" },
+    { "id": "user-malaz", "name": "Malaz", "role": "member" },
+    { "id": "user-abdallah", "name": "Abdallah", "role": "member" },
+    { "id": "user-ababaker", "name": "Ababaker", "role": "member" },
+    { "id": "user-ali", "name": "Ali", "role": "member" },
+    { "id": "user-jbo", "name": "Jbo", "role": "member" },
+    { "id": "user-salah", "name": "Salah", "role": "member" },
+    { "id": "user-abdelrahman", "name": "Abdelrahman", "role": "member" },
+    { "id": "user-elbadawie", "name": "Elbadawie", "role": "member" }
+  ],
+  "tasks": [
+    {
+      "id": "task-1",
+      "title": "Create workshop outline",
+      "type": "workshop",
+      "description": "Prepare the workshop outline and key talking points for the team session.",
+      "status": "in-progress",
+      "assignedTo": "Malaz",
+      "createdBy": "Yaseen",
+      "dueDate": "2026-04-05",
+      "createdAt": "2026-03-30T08:00:00.000Z",
+      "updatedAt": "2026-03-30T08:00:00.000Z",
+      "comments": [
+        {
+          "id": "task-comment-1",
+          "authorName": "Azza",
+          "body": "Keep the session interactive and add a short Q&A at the end.",
+          "createdAt": "2026-03-31T10:00:00.000Z"
+        }
+      ],
+      "memberNotes": [
+        "Draft structure is ready and I will finish the final slides tomorrow."
+      ]
+    }
+  ],
+  "messageThreads": [
+    {
+      "id": "thread-1",
+      "participants": ["Yaseen", "Malaz"],
+      "lastMessageAt": "2026-03-31T09:00:00.000Z",
+      "messages": [
+        {
+          "id": "message-1",
+          "senderName": "Malaz",
+          "recipientName": "Yaseen",
+          "body": "I started the workshop outline and will share a first version soon.",
+          "createdAt": "2026-03-31T09:00:00.000Z"
+        }
+      ]
+    }
+  ],
+  "recommendations": [
+    {
+      "id": "recommendation-1",
+      "title": "Poster design review session",
+      "type": "poster",
+      "description": "A short internal review before publishing posters would improve consistency.",
+      "createdBy": "Ali",
+      "createdAt": "2026-03-30T12:00:00.000Z",
+      "reactions": ["Azza", "Yaseen"],
+      "comments": [
+        {
+          "id": "recommendation-comment-1",
+          "authorName": "Ahmed",
+          "body": "This is a good idea. We can connect it with the weekly content review.",
+          "createdAt": "2026-03-30T13:00:00.000Z"
+        }
+      ]
+    }
+  ]
+}
