@@ -21,7 +21,6 @@ import {
   Crown,
   Bell,
   User,
-  ShoppingBag,
 } from "lucide-react";
 
 interface NavItem {
@@ -43,7 +42,6 @@ export function Sidebar() {
       href: "/dashboard/tasks",
       icon: <CheckSquare className="h-5 w-5" />,
     },
-    { label: "Nobatia Orders", href: "/dashboard/orders", icon: <ShoppingBag className="h-5 w-5" /> },
     { label: "Messages", href: "/dashboard/messages", icon: <MessageSquare className="h-5 w-5" /> },
     { label: "Recommendations", href: "/dashboard/recommendations", icon: <Lightbulb className="h-5 w-5" /> },
     { label: "Calendar", href: "/dashboard/calendar", icon: <Calendar className="h-5 w-5" /> },

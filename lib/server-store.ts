@@ -7,8 +7,6 @@ import type {
   MemberName,
   MessageThread,
   Notification,
-  Order,
-  OrderStatus,
   Recommendation,
   Task,
   TaskPriority,
@@ -35,7 +33,6 @@ function createDefaultData(): AppData {
     recommendations: [],
     notifications: [],
     activityFeed: [],
-    orders: [],
   };
 }
 
@@ -93,7 +90,6 @@ export async function getAppData(): Promise<AppData> {
     // Ensure new fields exist for backward compatibility
     if (!data.notifications) data.notifications = [];
     if (!data.activityFeed) data.activityFeed = [];
-    if (!data.orders) data.orders = [];
     return data;
   }
 
@@ -414,68 +410,4 @@ function addActivity(data: AppData, actorName: TeamMemberName, action: string, t
     createdAt: new Date().toISOString(),
   };
   data.activityFeed = [entry, ...data.activityFeed].slice(0, 100);
-}
-
-// --- Orders ---
-
-export async function createOrder(input: {
-  category: string;
-  quantity: number;
-  note?: string;
-  createdBy: TeamMemberName;
-}) {
-  const data = await getAppData();
-  if (!data.orders) data.orders = [];
-  const now = new Date().toISOString();
-
-  const order: Order = {
-    id: `order-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
-    category: input.category,
-    quantity: input.quantity,
-    status: "active",
-    paid: false,
-    note: input.note,
-    createdBy: input.createdBy,
-    createdAt: now,
-    updatedAt: now,
-  };
-
-  const next = { ...data, orders: [order, ...data.orders] };
-  await addActivity(next, input.createdBy, "added a new order", `${input.quantity}x ${input.category}`, `/dashboard/orders`);
-  await saveAppData(next);
-  return order;
-}
-
-export async function updateOrder(input: {
-  orderId: string;
-  status?: OrderStatus;
-  paid?: boolean;
-  actorName: TeamMemberName;
-}) {
-  const data = await getAppData();
-  if (!data.orders) data.orders = [];
-  const now = new Date().toISOString();
-
-  const orders = data.orders.map((order) => {
-    if (order.id !== input.orderId) return order;
-    const updated = { ...order, updatedAt: now };
-    if (input.status !== undefined) updated.status = input.status;
-    if (input.paid !== undefined) updated.paid = input.paid;
-    return updated;
-  });
-
-  const next = { ...data, orders };
-  await saveAppData(next);
-  return orders.find((o) => o.id === input.orderId) ?? null;
-}
-
-export async function deleteOrder(orderId: string): Promise<boolean> {
-  const data = await getAppData();
-  if (!data.orders) data.orders = [];
-  const before = data.orders.length;
-  const orders = data.orders.filter((o) => o.id !== orderId);
-  if (orders.length === before) return false;
-  const next = { ...data, orders };
-  await saveAppData(next);
-  return true;
 }

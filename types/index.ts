@@ -21,8 +21,6 @@ export type TaskType = "poster" | "workshop" | "video";
 export type TaskStatus = "todo" | "in-progress" | "done";
 export type TaskPriority = "high" | "medium" | "low";
 
-export type OrderStatus = "active" | "done";
-
 export interface UserProfile {
   id: string;
   name: TeamMemberName;
@@ -111,18 +109,6 @@ export interface ActivityEntry {
   createdAt: string;
 }
 
-export interface Order {
-  id: string;
-  category: string;
-  quantity: number;
-  status: OrderStatus;
-  paid: boolean;
-  note?: string;
-  createdBy: TeamMemberName;
-  createdAt: string;
-  updatedAt: string;
-}
-
 export interface AppData {
   users: TeamUser[];
   tasks: Task[];
@@ -130,7 +116,6 @@ export interface AppData {
   recommendations: Recommendation[];
   notifications: Notification[];
   activityFeed: ActivityEntry[];
-  orders: Order[];
 }
 
 export function slugifyName(name: string) {
