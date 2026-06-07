@@ -1,7 +1,7 @@
 /**
  * Landing Page Component
  * ======================
- * Simple, casual landing page for D&A Office
+ * Simple landing page for ISS Team Space
  * Shows a motivational message about working together
  * and provides access to the login
  */
@@ -33,7 +33,7 @@ export default function LandingPage() {
               <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center shadow-md">
                 <Users className="w-6 h-6 text-primary-foreground" />
               </div>
-              <span className="text-xl font-bold text-foreground">D&A Office</span>
+              <span className="text-xl font-bold text-foreground">ISS Team Space</span>
             </Link>
 
             {/* Sign in button */}
@@ -80,7 +80,7 @@ export default function LandingPage() {
               &quot;Alone we can do so little; together we can do so much.&quot;
             </p>
             <p className="text-muted-foreground text-sm mt-2">
-              - The D&A Office Team
+              - The ISS Team
             </p>
           </div>
 
@@ -117,7 +117,7 @@ export default function LandingPage() {
               <Users className="w-3 h-3 text-primary-foreground" />
             </div>
             <span className="text-sm text-muted-foreground">
-              D&A Office - Built with love for the team
+              ISS Team Space - Built for the team
             </span>
           </div>
         </div>

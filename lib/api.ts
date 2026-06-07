@@ -3,6 +3,8 @@ import type {
   AppData,
   MessageThread,
   Notification,
+  Order,
+  OrderStatus,
   Recommendation,
   Task,
   TaskPriority,
@@ -132,5 +134,38 @@ export function fetchNotifications() {
 export function markNotificationsReadRequest() {
   return request<{ ok: boolean }>("/api/notifications", {
     method: "POST",
+  });
+}
+
+// --- Orders ---
+
+export function fetchOrders() {
+  return request<Order[]>("/api/orders");
+}
+
+export function createOrderRequest(payload: {
+  category: string;
+  quantity: number;
+  note?: string;
+}) {
+  return request<Order>("/api/orders", {
+    method: "POST",
+    body: JSON.stringify(payload),
+  });
+}
+
+export function updateOrderRequest(orderId: string, payload: {
+  status?: OrderStatus;
+  paid?: boolean;
+}) {
+  return request<Order>(`/api/orders/${orderId}`, {
+    method: "PATCH",
+    body: JSON.stringify(payload),
+  });
+}
+
+export function deleteOrderRequest(orderId: string) {
+  return request<{ ok: boolean }>(`/api/orders/${orderId}`, {
+    method: "DELETE",
   });
 }

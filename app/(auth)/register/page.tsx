@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
 import { Loader2, Users, Crown, User, Check, Mail, Lock } from "lucide-react";
-import { LEADERS, type TeamMemberName } from "@/types";
+import { ALL_TEAM_MEMBERS, LEADERS, type TeamMemberName } from "@/types";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -17,10 +17,16 @@ export default function RegisterPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [names, setNames] = useState<{ name: TeamMemberName; taken: boolean }[]>([]);
+  const [names, setNames] = useState<{ name: TeamMemberName; taken: boolean }[]>(
+    ALL_TEAM_MEMBERS.map((name) => ({ name, taken: false }))
+  );
 
   useEffect(() => {
-    fetchAvailableNames().then(setNames).catch(() => {});
+    fetchAvailableNames()
+      .then(setNames)
+      .catch(() => {
+        toast.error("Could not load registered names from the server, so all names are shown for local use.");
+      });
   }, []);
 
   const handleSubmit = async (event: React.FormEvent) => {

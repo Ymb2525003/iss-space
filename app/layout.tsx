@@ -22,10 +22,10 @@ import { Toaster } from "@/components/ui/sonner";
  * SEO and browser metadata for the application
  */
 export const metadata: Metadata = {
-  title: "D&A Office - Team Collaboration",
-  description: "Our space to collaborate, share ideas, and make great things happen together.",
+  title: "ISS Team Space",
+  description: "ISS team workspace for tasks, messages, recommendations, and calendar planning.",
   keywords: ["team management", "collaboration", "task management"],
-  authors: [{ name: "D&A Office" }],
+  authors: [{ name: "ISS Team" }],
   icons: {
     icon: [
       {
