@@ -1,20 +1,98 @@
 {
   "users": [
-    { "id": "user-yaseen", "name": "Yaseen", "role": "admin" },
-    { "id": "user-azza", "name": "Azza", "role": "leader" },
-    { "id": "user-ahmed", "name": "Ahmed", "role": "leader" },
-    { "id": "user-malaz", "name": "Malaz", "role": "member" },
-    { "id": "user-abdallah", "name": "Abdallah", "role": "member" },
-    { "id": "user-ababaker", "name": "Ababaker", "role": "member" },
-    { "id": "user-ali", "name": "Ali", "role": "member" },
-    { "id": "user-jbo", "name": "Jbo", "role": "member" },
-    { "id": "user-salah", "name": "Salah", "role": "member" },
-    { "id": "user-abdelrahman", "name": "Abdelrahman", "role": "member" },
-    { "id": "user-elbadawie", "name": "Elbadawie", "role": "member" }
+    {
+      "id": "user-yaseen",
+      "name": "Yaseen",
+      "role": "admin"
+    },
+    {
+      "id": "user-azza",
+      "name": "Azza",
+      "role": "leader"
+    },
+    {
+      "id": "user-ahmed",
+      "name": "Ahmed",
+      "role": "leader"
+    },
+    {
+      "id": "user-malaz",
+      "name": "Malaz",
+      "role": "member"
+    },
+    {
+      "id": "user-abdallah",
+      "name": "Abdallah",
+      "role": "member"
+    },
+    {
+      "id": "user-ababaker",
+      "name": "Ababaker",
+      "role": "member"
+    },
+    {
+      "id": "user-ali",
+      "name": "Ali",
+      "role": "member"
+    },
+    {
+      "id": "user-jbo",
+      "name": "Jbo",
+      "role": "member"
+    },
+    {
+      "id": "user-salah",
+      "name": "Salah",
+      "role": "member"
+    },
+    {
+      "id": "user-abdelrahman",
+      "name": "Abdelrahman",
+      "role": "member"
+    },
+    {
+      "id": "user-elbadawie",
+      "name": "Elbadawie",
+      "role": "member"
+    }
   ],
-  "tasks": [],
+  "tasks": [
+    {
+      "id": "task-1780820557498",
+      "title": "workshop",
+      "type": "workshop",
+      "description": "try to do it asap",
+      "status": "todo",
+      "priority": "medium",
+      "assignedTo": "Abdallah",
+      "createdBy": "Yaseen",
+      "dueDate": "2026-06-16",
+      "createdAt": "2026-06-07T08:22:37.498Z",
+      "updatedAt": "2026-06-07T08:22:37.498Z",
+      "comments": [],
+      "memberNotes": []
+    }
+  ],
   "messageThreads": [],
   "recommendations": [],
-  "notifications": [],
-  "activityFeed": []
+  "notifications": [
+    {
+      "id": "notif-1780820557499-gb66",
+      "recipientName": "Abdallah",
+      "message": "New task assigned: workshop",
+      "link": "/dashboard/tasks",
+      "read": false,
+      "createdAt": "2026-06-07T08:22:37.499Z"
+    }
+  ],
+  "activityFeed": [
+    {
+      "id": "activity-1780820557499-zs48",
+      "actorName": "Yaseen",
+      "action": "assigned a task",
+      "targetTitle": "workshop",
+      "targetLink": "/dashboard/tasks",
+      "createdAt": "2026-06-07T08:22:37.499Z"
+    }
+  ]
 }
